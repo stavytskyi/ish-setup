@@ -114,10 +114,16 @@ main() {
 
     # Configure doas
     configure_doas "$NEW_USER"
-
+    
     echo "Setup complete!"
-    echo "You can now switch to user '$NEW_USER' using:"
-    echo "  doas -u $NEW_USER zsh"
+	echo ""
+	echo "To switch to user '$NEW_USER', use the following command:"
+	echo "  su - $NEW_USER"
+	echo ""
+	echo "Additionally, to set '$NEW_USER' as the default login user in iSH, follow these steps:"
+	echo "1. Tap and hold the gear icon on the on-screen keyboard for 10 seconds to access advanced settings."
+	echo "2. Change the 'Launch cmd' from '/bin/login -f root' to '/bin/login -f NEW_USER'."
+	echo "3. Save the changes and restart the iSH app."
 }
 
 # Execute the main function
